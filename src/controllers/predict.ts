@@ -10,8 +10,14 @@ export async function postPredict(
   res: Response,
   next: NextFunction
 ): Promise<any> {
-  const loadModel = new LoadModel();
+  // Pastikan lat dan lon ada di body request
+  const { latitude, longitude } = req.body;
 
+  if (!latitude || !longitude) {
+    return res.status(400).json({ error: "Coordinates (latitude and longitude) are required" });
+  }
+
+  const loadModel = new LoadModel();
   const model = await loadModel.loadModel();
 
   if (!model) {
@@ -25,7 +31,7 @@ export async function postPredict(
   try {
     const image = req.file.buffer;
 
-    const gcsUrl = await uploadGCS(req.file);
+    // const gcsUrl = await uploadGCS(req.file);
 
     const { confidenceScore, label, suggestion } = await predictClassification(
       model,
@@ -40,7 +46,11 @@ export async function postPredict(
       result: label,
       suggestion,
       createdAt,
-      fileUrl: gcsUrl,
+      fileUrl: "http://test.com",
+      coordinates: {
+        latitude,
+        longitude,
+      },
     };
 
     const message = "Model is predicted successfully";

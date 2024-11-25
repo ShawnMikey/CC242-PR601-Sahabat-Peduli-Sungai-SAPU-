@@ -5,13 +5,20 @@ interface PredictionData {
   suggestion: string;
   createdAt: string;
   fileUrl: string;
+  coordinates?: { latitude: number; longitude: number };
 }
 
 export async function storeFirestore(
   id: string,
   data: PredictionData
 ): Promise<void> {
-  const db = new Firestore();
-  const predictCollection = db.collection("predictions");
-  await predictCollection.doc(id).set(data);
+  try {
+    const db = new Firestore();
+    const predictCollection = db.collection("predictions");
+
+    await predictCollection.doc(id).set(data);
+  } catch (error) {
+    console.error("Error storing data in Firestore:", error);
+    throw new Error("Failed to store data in Firestore");
+  }
 }
