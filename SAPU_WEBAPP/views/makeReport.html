@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a New Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- SweetAlert2 CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <!-- Report CSS -->
+    <link rel="stylesheet" href="/css/report_style.css">
+</head>
+
+<body>
+
+    <!-- Exit Button -->
+    <button id="exitButton" onclick="exitToHome()" class="exit-btn">Exit</button>
+
+    <!-- Step 0: Map Section for Selecting Location -->
+    <div class="map-section" id="mapSection">
+        <h1 id="step_0">Pilih lokasi sungai!</h1>
+
+        <!-- Location selection with map -->
+        <div id="map"></div>
+
+        <!-- Separate Buttons for Camera and Gallery -->
+        <button class="ambil-lokasi" id="ambil-lokasi-Btn" onclick="preInput()">Simpan dan lanjut</button>
+    </div>
+
+    <!-- Step 1: Take or Upload image -->
+    <div class="upload-section" id="uploadSection" style="display:none;">
+        <h1 id="step_1">Ambil foto yuk!</h1>
+        <img src="https://t3.ftcdn.net/jpg/04/92/94/70/360_F_492947093_LOGkIRfXScJs3PS2tgjJ4lGR74B0hs7Z.jpg"alt="camera">
+    
+        <!-- Separate Buttons for Camera and Gallery -->
+        <button class="ambil-foto" id="ambil-foto-Btn" onclick="handleFileInput()">Ambil foto</button>
+        <button class="pilih-galeri" id="pilih-galeri-Btn" onclick="handleFileInput()">Pilih dari galeri</button>
+    </div>     
+
+    <!-- Step 2 and 3: Confirm or Retake image and Detect Object -->
+    <div class="confirmation-section" id="confirmationSection" style="display:none;">
+        <h1 id="step_2">Apakah anda yakin?</h1>
+
+        <!-- File Inputs for Image Upload (camera or gallery) -->
+        <input type="file" id="fileInput" accept="image/*" onchange="handleFileUpload(event)" capture="camera">
+        <input type="file" id="fileInput" accept="image/*" onchange="handleFileUpload(event)">
+        
+        <!-- Preview of the uploaded image -->
+        <div id="imagePreview"></div>
+
+        <!-- Confirm or Retake Image -->
+        <button class="confirm" id="confirmBtn" style="display:none;" onclick="runObjectDetection()">jalankan deteksi</button>
+        <button class="retake" id="retakeBtn" style="display:none;" onclick="retakeImage()">Kembali dan ulang</button>
+
+        <!-- Object detection -->
+        <h1 id="step_3" style="display:none;">Prediksi ML model</h1>
+        <button class="run-detection" id="runDetectionBtn" style="display:none;" onclick="showForm()">Simpan dan lanjut</button>
+    </div>
+
+    <!-- Step 4: Add title and description -->
+    <div class="form-section" id="formSection" style="display:none;">
+        <h1 id="step_4">Beri deskripsi singkat!</h1>
+        <img src="https://media.istockphoto.com/id/882917690/vector/pencil-with-paper-icon.jpg?s=612x612&w=0&k=20&c=AswM7O_mPKPz6783uSj9feo9SYiTmHtsY-Yh4g-S3Xk="alt="details">
+
+        <!-- Title -->
+        <div class="form-group">
+          <label for="reportTitle">Judul</label>
+          <input type="text" id="reportTitle" placeholder="Masukkan judul laporan">
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+          <label for="reportDescription">Deskripsi</label>
+          <textarea id="reportDescription" placeholder="Masukkan deskripsi singkat"></textarea>
+        </div>
+
+        <button class="submit-btn" onclick="submitReport()">Submit laporan</button>
+    </div>
+
+    <!-- Step 5: Go to your report history -->
+    <div class="history-section" id="historySection" style="display:none;">
+        <h1 id="step_5">Riwayat laporan anda</h1>
+     </div>
+   
+   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script> <!-- For ML model -->
+   <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script> <!-- For ML model -->
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> <!-- For interactive map  -->
+   <script src="/js/report.js"></script>
+
+</body>
+
+</html>

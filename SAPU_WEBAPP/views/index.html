@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Float Waste Detector</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Header Banner -->
+  <header class="header">
+    <div class="logo">
+      <img src="/images/broom.png" alt="App Logo">
+      <div>
+        <div class="app-name">SAPU</div>
+        <div class="subtitle">Sahabat Peduli Sungai</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content Sections -->
+  <div id="home" class="section active-section">
+    <h1>Lindungi Sungaimu!</h1>
+    <p>Digitalisasi pelaporan polusi sungai memberikan solusi bagi masyarakat untuk menjaga kebersihan sungai. 
+      Fitur seperti deteksi sampah di sungai dan pemetaan area rawan polusi hadir dalam aplikasi ini untuk membantu 
+      Anda berkontribusi dalam menjaga lingkungan.</p>
+  </div>
+
+  <div id="report" class="section">
+    <h1>Report</h1>
+    <div class="report">
+      <img src="/images/Warning.png"alt="Report">
+      <button class="make-report" onclick="window.location.href='/makeReport'">Buat laporan baru</button>
+      <button class="history-report" onclick="window.location.href='/reportHistory'">Lihat riwayat laporan anda</button>
+    </div>
+  </div>
+
+  <div id="map" class="section">
+    <!-- <h1>Map</h1> -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+      // Create a map centered on a specific location (example: latitude and longitude of a city)
+      var map = L.map('map').setView([51.505, -0.09], 13); // Default center (London)
+  
+      // Add tile layer to the map (OpenStreetMap tiles)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+  
+      // Example user report data (could be dynamically fetched from your server)
+      var userReports = [
+        { lat: 51.505, lng: -0.09, description: "Floating waste near bridge" },
+        { lat: 51.51, lng: -0.1, description: "Plastic waste in river" },
+        { lat: 51.52, lng: -0.12, description: "Oil spill near riverbank" },
+        // Add more report locations here...
+      ];
+  
+      // Add markers for each user report
+      userReports.forEach(function(report) {
+        L.marker([report.lat, report.lng])
+          .addTo(map)
+          .bindPopup("<b>Report:</b><br>" + report.description);
+      });
+    </script>
+  </div>
+  
+  <div id="team" class="section">
+    <h1>Meet Our Team</h1>
+    <div class="team-container">
+      <!-- Team Member 1 -->
+      <div class="team-card">
+        <img src="https://media.licdn.com/dms/image/v2/C5603AQGtJ-HBfMxVrg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1629253571828?e=2147483647&v=beta&t=pv8AZ2oXtkIwJa07l6onvLUMQRg0cBirwG_ARiRtk3k" alt="Team Member 1">
+        <h2>Shawn Michael Dayanti Intong</h2>
+        <p>Universitas Indonesia</p>
+        <p>Machine Learning</p>
+      </div>
+      <!-- Team Member 2 -->
+      <div class="team-card">
+        <img src="https://media.licdn.com/dms/image/v2/C5603AQGtJ-HBfMxVrg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1629253571828?e=2147483647&v=beta&t=pv8AZ2oXtkIwJa07l6onvLUMQRg0cBirwG_ARiRtk3k" alt="Team Member 2">
+        <h2>Shawn Michael Dayanti Intong</h2>
+        <p>Universitas Indonesia</p>
+        <p>Machine Learning</p>
+      </div>
+      <!-- Team Member 3 -->
+      <div class="team-card">
+        <img src="https://media.licdn.com/dms/image/v2/C5603AQGtJ-HBfMxVrg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1629253571828?e=2147483647&v=beta&t=pv8AZ2oXtkIwJa07l6onvLUMQRg0cBirwG_ARiRtk3k" alt="Team Member 3">
+        <h2>Shawn Michael Dayanti Intong</h2>
+        <p>Universitas Indonesia</p>
+        <p>Cloud Computing</p>
+      </div>
+      <!-- Team Member 4 -->
+      <div class="team-card">
+        <img src="https://media.licdn.com/dms/image/v2/C5603AQGtJ-HBfMxVrg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1629253571828?e=2147483647&v=beta&t=pv8AZ2oXtkIwJa07l6onvLUMQRg0cBirwG_ARiRtk3k" alt="Team Member 4">
+        <h2>Shawn Michael Dayanti Intong</h2>
+        <p>Universitas Indonesia</p>
+        <p>Cloud Computing</p>
+      </div>
+      <!-- Team Member 5 -->
+      <div class="team-card">
+        <img src="https://media.licdn.com/dms/image/v2/C5603AQGtJ-HBfMxVrg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1629253571828?e=2147483647&v=beta&t=pv8AZ2oXtkIwJa07l6onvLUMQRg0cBirwG_ARiRtk3k" alt="Team Member 5">
+        <h2>Shawn Michael Dayanti Intong</h2>
+        <p>Universitas Indonesia</p>
+        <p>Cloud Computing</p>
+      </div>
+    </div>
+
+     <!-- About Us Section -->
+    <div class="about-us">
+        <h1>About Us</h1>
+        <p>Sapu  adalah aplikasi yang bertujuan untuk meningkatkan kebersihan sungai melalui partisipasi masyarakat.</p>
+    </div> 
+
+    <!-- Supported By Section -->
+    <div class="supported-by">
+        <h1>Supported By</h1>
+        <div class="partners">
+            <img class="partner-logo" src="/images/kampus_merdeka.png" alt="Partner 1">
+            <img class="partner-logo" src="/images/bangkit.png" alt="Partner 2">
+            <img class="partner-logo" src="https://via.placeholder.com/150" alt="Partner 3">
+            <img class="partner-logo" src="https://via.placeholder.com/150" alt="Partner 4">
+        </div>
+    </div>
+
+    <div class="contact-us">
+        <h1>Contact Us</h1>
+        <p>If you have any questions or want to collaborate, reach out to us below:</p>
+        <form>
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+  </div>
+
+  <!-- Bottom Navbar -->
+  <nav class="bottom-nav">
+    <a href="#" id="nav-home" class="active-nav" onclick="navigate('home', 'nav-home')">
+      <span class="nav-icon">🏠</span>
+      Home
+    </a>
+    <a href="#" id="nav-report" onclick="navigate('report', 'nav-report')">
+      <span class="nav-icon">🔍</span>
+      Report
+    </a>
+    <a href="#" id="nav-map" onclick="navigate('map', 'nav-map')">
+      <span class="nav-icon">📍</span>
+      Map
+    </a>
+    <a href="#" id="nav-team" onclick="navigate('team', 'nav-team')">
+      <span class="nav-icon">👥</span>
+      Team
+    </a>
+    <a href="#" id="nav-profile" onclick="navigate('profile', 'nav-profile')">
+      <span class="nav-icon">👤</span>
+      Profile
+    </a>
+  </nav>
+
+  <script>
+    function navigate(sectionId, navId) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active-section'));
+      document.getElementById(sectionId).classList.add('active-section');
+
+      document.querySelectorAll('.bottom-nav a').forEach(nav => nav.classList.remove('active-nav'));
+      document.getElementById(navId).classList.add('active-nav');
+    }
+  </script>
+</body>
+</html>

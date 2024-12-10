@@ -1,0 +1,302 @@
+/* Base Styles */
+body {
+font-family: "Maven Pro", sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+line-height: 1.6;
+padding-bottom: 80px;
+}
+
+h1 {
+color: #2ecc71;
+}
+
+.section {
+display: none;
+padding: 10px;
+text-align: center;
+padding-bottom: 80px
+}
+
+.active-section {
+display: block;
+}
+
+/* Header Banner Styles */
+.header {
+background: #27ae60;
+color: white;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 20px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header .logo {
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+.header .logo img {
+height: 40px;
+margin-right: 10px;
+margin-left: 100px;
+}
+
+.header .app-name {
+font-size: 1.2rem;
+font-weight: bold;
+}
+
+.header .subtitle {
+font-size: 0.8rem;
+}
+
+.header .icons span {
+margin-left: 10px;
+cursor: pointer;
+}
+
+/* Navbar Styles */
+.bottom-nav {
+position: fixed;
+bottom: 0;
+width: 100%;
+background: #27ae60;
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 15px 0;
+border-radius: 20px 20px 0 0;
+box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+z-index: 100;
+}
+
+.bottom-nav a {
+color: white;
+text-decoration: none;
+font-size: 0.8rem;
+text-align: center;
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+transition: transform 0.3s ease;
+}
+
+.bottom-nav a:hover {
+color: #d4f4e3;
+transform: scale(1.1);
+}
+
+.nav-icon {
+font-size: 1.5rem;
+margin-bottom: 5px;
+}
+
+.active-nav .nav-icon {
+text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #27ae60, 0 0 40px #27ae60;
+}
+
+/* Team Page Styles */
+.team-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 20px;
+padding: 20px;
+}
+
+.team-card {
+background: #f8f8f8;
+border-radius: 10px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+padding: 20px;
+text-align: center;
+width: 200px;
+}
+
+.team-card img {
+width: 80px;
+height: 80px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: 10px;
+border: 2px solid #27ae60;
+}
+
+.team-card h2 {
+margin: 10px 0 5px;
+font-size: 1.1rem;
+color: #333;
+}
+
+.team-card p {
+font-size: 0.9rem;
+color: #555;
+}
+
+/* About Us Section */
+.about-us {
+background-color: #f0f8ff;
+padding: 40px;
+border-radius: 10px;
+margin-bottom: 40px;
+}
+
+.about-us h1 {
+font-size: 1.8rem;
+color: #333;
+margin-bottom: 20px;
+}
+
+.about-us p {
+font-size: 1rem;
+color: #555;
+line-height: 1.6;
+}
+
+/* Supported By Section */
+.supported-by {
+background-color: #fafafa;
+padding: 40px;
+border-radius: 10px;
+margin-bottom: 40px;
+}
+
+.supported-by h1 {
+font-size: 1.8rem;
+color: #333;
+margin-bottom: 20px;
+}
+
+.supported-by .partners {
+display: flex;
+justify-content: center;
+gap: 50px;
+flex-wrap: wrap;
+}
+
+.partner-logo {
+width: 150px;
+height: 60px;
+margin-bottom: 20px;
+opacity: 0.8;
+transition: opacity 0.3s ease;
+}
+
+.partner-logo:hover {
+opacity: 1;
+}
+
+/* Contact Us Section */
+.contact-us {
+background-color: #eafaf1;
+padding: 40px;
+border-radius: 10px;
+}
+
+.contact-us h1 {
+font-size: 1.8rem;
+color: #333;
+margin-bottom: 20px;
+}
+
+.contact-us p {
+font-size: 1rem;
+color: #555;
+line-height: 1.6;
+}
+
+.contact-us form {
+display: flex;
+flex-direction: column;
+gap: 15px;
+max-width: 400px;
+margin: 0 auto;
+}
+
+.contact-us input, .contact-us textarea {
+padding: 10px;
+font-size: 1rem;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+.contact-us textarea {
+resize: vertical;
+min-height: 150px;
+}
+
+.contact-us button {
+background-color: #27ae60;
+color: white;
+padding: 12px;
+border: none;
+border-radius: 5px;
+font-size: 1rem;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.contact-us button:hover {
+background-color: #2ecc71;
+}
+
+#map {
+height: 100vh; /* Full height of the viewport */
+}
+
+.report img{
+width: 300px;
+height: 300px;
+object-fit: cover;
+margin-bottom: 10px;
+}
+
+.report {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+}
+
+.report button {
+width: 400px;
+padding: 15px 15px;
+font-size: 18px;
+border-radius: 10px;
+cursor: pointer;
+white-space: nowrap;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+/* Styling for "Make a New Report" button (green with white text) */
+.make-report {
+background-color: #27ae60;
+color: white;
+border: 2px solid #27ae60;
+}
+
+.make-report:hover {
+background-color: #2ecc71;
+}
+
+/* Styling for "My Report History" button (white with green text) */
+.history-report {
+background-color: white;
+color: #27ae60;
+border: 2px solid #27ae60;
+}
+
+.history-report:hover {
+background-color: #27ae60;
+color: white;
+}

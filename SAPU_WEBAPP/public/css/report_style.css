@@ -1,0 +1,232 @@
+body {
+font-family: 'Maven Pro', sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+flex-direction: column;
+background-color: #f0f0f0;
+}
+
+/* Style for all H1 tags */
+h1 {
+font-family: 'Maven Pro', sans-serif;
+font-size: 24px;
+text-align: center;
+margin: 20px 0;
+opacity: 1;
+transition: opacity 0.5s ease-in-out;
+}
+
+h1.hidden {
+display: none; /* Hide elements when not active */
+}
+  
+/* Upload, Confirm, and Add Sections*/
+.upload-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+}
+
+.confirmation-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+}
+
+.form-section {
+margin-top: 20px;
+}
+
+button {
+background-color: #27ae60;
+color: white;
+padding: 15px 30px;
+font-size: 18px;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+width: 360px;
+white-space: nowrap; /* Prevent the text inside the button from wrapping */
+display: flex; /* Make the button a flex container */
+align-items: center; /* Vertically center the text */
+justify-content: center; /* Horizontally center the text */
+text-align: center; /* Ensure text is centered */
+}
+
+/* Styling for "Make a New Report" button (green with white text) */
+.ambil-foto {
+background-color: #27ae60;
+color: white;
+}
+
+.ambil-foto:hover {
+background-color: #2ecc71;
+}
+
+/* Styling for "My Report History" button (white with green text) */
+.pilih-galeri {
+background-color: white;
+color: #27ae60;
+border: 2px solid #27ae60;
+}
+
+.pilih-galeri:hover {
+background-color: #27ae60;
+color: white;
+}
+
+/* Styling for "Make a New Report" button (green with white text) */
+.confirm {
+background-color: #27ae60;
+color: white;
+}
+
+.confirm:hover {
+background-color: #2ecc71;
+}
+
+/* Styling for "My Report History" button (white with green text) */
+.retake {
+background-color: white;
+color: #27ae60;
+border: 2px solid #27ae60;
+}
+
+.retake:hover {
+background-color: #27ae60;
+color: white;
+}
+
+input[type="file"] {
+display: none;
+}
+
+/* Container for the image preview */
+#imagePreview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto; /* Margin around the container */
+    max-width: 90vw; /* 90% of the viewport width */
+    max-height: 80vh; /* 80% of the viewport height */
+    overflow: hidden; /* Prevent overflow */
+    background-color: #f9f9f9; /* Optional background color */
+    border: 1px solid #ddd; /* Optional border */
+    border-radius: 10px; /* Optional rounded corners */
+}
+
+/* Images and canvas within the preview */
+#imagePreview img,
+#imagePreview canvas {
+    max-width: 100%; /* Fit within the container */
+    max-height: 100%; /* Fit within the container */
+    object-fit: contain; /* Preserve aspect ratio */
+    border-radius: 10px; /* Match the container's rounded corners */
+}
+
+.form-group {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+margin-bottom: 15px;
+width: 100%;
+}
+
+.form-group label {
+font-weight: bold;
+margin-bottom: 5px;
+font-size: 16px;
+}
+
+.form-group input,
+.form-group textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+font-size: 16px;
+outline: none;
+transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+border-color: #2ecc71;
+}
+
+textarea {
+resize: none;
+height: 100px;
+}
+
+.submit-btn {
+background-color: #2ecc71;
+color: white;
+font-weight: bold;
+}
+
+.submit-btn:hover {
+background-color: #27ae60;
+}
+
+.exit-btn {
+position: absolute;
+top: 10px;
+right: 10px;
+background-color: #ff4d4d; /* Red exit button */
+color: white;
+padding: 8px 12px;
+font-size: 14px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.exit-btn:hover {
+background-color: #e60000;
+}
+
+.back-btn {
+position: absolute;
+top: 10px;
+left: 10px;
+background-color: transparent;
+color: #333;
+font-size: 24px;
+border: none;
+cursor: pointer;
+transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+color: #4caf50; /* Green highlight on hover */
+}
+
+#map {
+height: 620px;
+margin: 1rem auto;
+width: 100%;
+border-radius: 10px;
+}
+
+.upload-section img{
+width: 350px;
+height: 350px;
+object-fit: cover;
+margin-bottom: 10px;
+}
+
+.form-section img{
+width: 350px;
+height: 350px;
+object-fit: cover;
+margin-bottom: 10px;
+}
